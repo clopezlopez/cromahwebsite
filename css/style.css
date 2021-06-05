@@ -1,15 +1,33 @@
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
+
+:root {
+    --primary-color: #BB0BCE;
+    --secondary-color: #FF7112;
+    --background-primary: #BB0BCE; 
+    --background-secondary: #FF7112;
+    --background-light: #f4f4f4; 
+    --light-color: #f1f1f1;
+    --dark-color: #333;
+    --max-width: 1300px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
- 
+
+
 html{
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary-color);
 }
 
 /* custom scroll bar */
@@ -28,17 +46,32 @@ html{
 }
 
 /* all similar content styling codes */
-section{
+
+.py-1 { padding: 0.5rem 0 }
+.py-2 { padding: 1rem 0 }
+.py-3 { padding: 1.5rem 0 }
+
+section {
     padding: 100px 0;
 }
+
 .max-width{
-    max-width: 1300px;
+    max-width: var(--max-width);
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .contact, footer{
-    font-family: 'Poppins', sans-serif;
+
+.header-text h2 {
+    font-size: 4rem;
+    color: var(--light-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.4;
+    text-align: center;
+    padding-top: 2rem;
+    font-family: 'Ubuntu', sans-serif;
 }
+
 .about .about-content, 
 .services .serv-content,
 .contact .contact-content{
@@ -47,6 +80,12 @@ section{
     align-items: center;
     justify-content: space-between;
 }
+
+.about,
+.contact {
+    background: var(--light-color);
+}
+
 section .title{
     position: relative;
     text-align: center;
@@ -56,6 +95,8 @@ section .title{
     padding-bottom: 20px;
     font-family: 'Ubuntu', sans-serif;
 }
+
+
 section .title::before{
     content: "";
     position: absolute;
@@ -63,17 +104,16 @@ section .title::before{
     left: 50%;
     width: 180px;
     height: 3px;
-    background: #111;
+    background: var(--dark-color);
     transform: translateX(-50%);
 }
+
 section .title::after{
     position: absolute;
     bottom: -8px;
     left: 50%;
     font-size: 20px;
-    color: #BB0BCE;
     padding: 0 5px;
-    background: #fff;
     transform: translateX(-50%);
 }
 
@@ -84,13 +124,13 @@ section .title::after{
     width: 100%;
     z-index: 999;
     padding: 30px 0;
-    font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .navbar.sticky{
     padding: 15px 0;
-    background: #FF7112;
+    background: var(--background-secondary);
 }
 
 .navbar .max-width{
@@ -107,16 +147,16 @@ section .title::after{
 }
 
 .navbar .logo a{
-    color: #fff;
+    color: var(--light-color);
     font-size: 35px;
     font-weight: 600;
 }
 .navbar .logo a span{
-    color: #fff;
-    transition: all 0.3s ease;
+    color: var(--light-color);
+    transition: all 0.8s ease;
 }
 .navbar.sticky .logo a span{
-    color: #BB0BCE;
+    color: var(--primary-color);
 }
 
 /* .navbar .menu {
@@ -129,29 +169,29 @@ section .title::after{
 }
 
 .navbar .menu .current {
-    /* background: #fff;  */
-    color: #BB0BCE;
+    color: var(--primary-color);
  }
-
 
 .navbar .menu li a{
     display: block;
-    color: #fff;
+    color: var(--light-color);
     font-size: 20px;
     font-weight: 600;
     margin-left: 25px;
     transition: color 0.3s ease;
 }
+
 .navbar .menu li a:hover{
-    color: #BB0BCE;
+    color: var(--primary-color);
 }
+
 .navbar.sticky .menu li a:hover{
-    color: #fff;
+    color: var(--primary-color);
 }
 
 /* menu btn styling */
 .menu-btn{
-    color: #fff;
+    color: var(--light-color);
     font-size: 23px;
     cursor: pointer;
     display: none;
@@ -160,12 +200,12 @@ section .title::after{
     position: fixed;
     height: 45px;
     width: 42px;
-    background: #BB0BCE;
+    background: var(--background-secondary);
     right: 30px;
     bottom: 10px;
     text-align: center;
     line-height: 45px;
-    color: #fff;
+    color: var(--light-color);
     z-index: 9999;
     font-size: 30px;
     border-radius: 6px;
@@ -189,13 +229,12 @@ section .title::after{
 .home{
     display: flex;
     flex-direction: row-reverse;
-    background: url("images/interstellarthoughts.jpg") no-repeat center;
+    background: url("/images/interstellarthoughts.jpg") no-repeat center;
     height: 100vh;
-    color: #fff;
+    color: var(--light-color);
     min-height: 400px;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Ubuntu', sans-serif;
 }
 .home .max-width{
     margin: auto 0 auto 30px;
@@ -215,49 +254,14 @@ section .title::after{
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: #BB0BCE;
+    color: var(--primary-color);
     font-weight: 500;
 }
 
-.blog {
-    background: url('../images/interstellarthoughts_blog.jpg') no-repeat center center/cover;
-    height: 100vh;
-}
-.events {
-    background: url('../images/events_cover.jpg') no-repeat center center/cover;
-    height: 100vh;
-}
-
-.events::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    background: rgba(37, 1, 54, 0.2);
-
-}
-
-.photography {
-    background: url('../images/photo_gallery_cover2.jpg') no-repeat center center/cover;
-    height: 100vh;
-    position: relative
-}
-
-.photography::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    background: rgba(37, 1, 54, 0.144);
-
-}
 
 /* about section styling */
 .about .title::after{
+    background: var(--light-color);
     content: "who i am";
 }
 .about .about-content .left{
@@ -278,7 +282,7 @@ section .title::after{
     margin-bottom: 10px;
 }
 .about .about-content .right .text span{
-    color: #BB0BCE;
+    color: var(--primary-color);
 }
 .about .about-content .right p{
     text-align: justify;
@@ -286,22 +290,21 @@ section .title::after{
 
 
 /* services section styling */
-.services{
-    color:#fff;
-    background: #FF7112;
+.services {
+    color: var(--light-color);
 }
-.services .title::before,
-.title::before{
-    background: #fff;
+
+.services .title::before{
+    background: var(--light-color);
 }
 .services .title::after{
-    background: #FF7112;
+    background: var(--primary-color);
     content: "what i provide";
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
-    background: #ffff;
-    color: #111;
+    background: var(--light-color);
+    color: var(--dark-color);
     text-align: center;
     border-radius: 6px;
     padding: 20px 25px;
@@ -310,7 +313,7 @@ section .title::after{
 }
 
 .services .serv-content .card:hover{
-    background: #83348b;
+    background: var(--secondary-color);
 }
 .services .serv-content .card .box{
     transition: all 0.3s ease;
@@ -320,13 +323,13 @@ section .title::after{
 }
 .services .serv-content .card i{
     font-size: 50px;
-    color: #111;
+    color: var(--dark-color);
     transition: color 0.3s ease;
 }
 .services .serv-content .card:hover i, 
 .services .serv-content .card:hover p,
 .services .serv-content .card:hover .text{
-    color: #fff;
+    color: var(--light-color);
 }
 
 .services .serv-content .card .text{
@@ -338,6 +341,7 @@ section .title::after{
 
 /* contact section styling */
 .contact .title::after{
+    background: var(--light-color);
     content: "get in touch";
 }
 .contact .contact-content .column{
@@ -364,7 +368,7 @@ section .title::after{
 }
 .contact .contact-content .row i{
     font-size: 25px;
-    color: #83348b;
+    color: var(--primary-color);
 }
 .contact .contact-content .info .head{
     font-weight: 500;
@@ -559,6 +563,16 @@ footer span a:hover{
     .services .serv-content .card{
         width: 100%;
     }
+
+    .header-text h2 {
+        font-size: 2.8rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        text-align: center;
+        padding-top: 2rem;
+      }
 }
 
 @media (max-width: 500px) {

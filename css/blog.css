@@ -1,32 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #673AB7;
+.blog {
+  background: url('../images/interstellarthoughts_blog.jpg') no-repeat center center/cover;
+  height: 100vh;
 }
-
-/* .m-l {
-  margin: 2rem;
-} */
 
 .blog-post {
   display: flex;
   flex-direction: row;
-  margin: 10rem;
+  margin: 5rem 10rem;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--light-color);
 }
 
 .blog-post-reverse {
   display: flex;
   flex-direction: row-reverse;
-  margin: 10rem;
+  margin: 5rem 10rem;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--light-color);
 }
-
 
 .blog-post-img {
   flex: 1;
@@ -57,33 +51,16 @@ body {
 }
 
 .blog-post-title h2 {
-  color: #673AB7;
+  color: var(--primary-color);
   text-transform: uppercase;
 }
 
-.blog-post-read-more {
-  margin-top: 1rem;
+.blog-post-title,
+.blog-post-date,
+.blog-post-desc {
+  line-height: 1.5;
 }
 
-.blog-post-read-more a {
-  cursor: pointer;
-  font-style: normal;
-  border-radius: 0.3rem;
-  padding: 0.5rem;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #673AB7;
-  color: #673AB7 !important;
-  box-shadow: 0 0.05em 0.1em rgba(0, 0, 0, .25);
-}
-
-.blog-post-read-more a:hover{
-  transition: .5s;
-  background-color: #673AB7;
-  border: 1px solid #673AB7;
-  color: #fff !important;
-  text-decoration: none;
-}
 
 @media (max-width: 1024px) {
   .blog-post {
@@ -92,7 +69,6 @@ body {
     margin: 10rem;
     justify-content: center;
     align-items: center;
-    background-color: white;
   }
 
   .blog-post-reverse {
@@ -101,7 +77,6 @@ body {
     margin: 10rem;
     justify-content: center;
     align-items: center;
-    background-color: white;
   }
 
   .blog-post-img {
@@ -139,7 +114,6 @@ body {
     margin-right: 1rem;
     justify-content: center;
     align-items: center;
-    background-color: white;
   }
   .blog-post-reverse {
     display: flex;
@@ -191,7 +165,6 @@ body {
     margin-right: 1rem;
     justify-content: center;
     align-items: center;
-    background-color: white;
   }
 
   .blog-post-reverse {
@@ -202,7 +175,6 @@ body {
     margin-right: 1rem;
     justify-content: center;
     align-items: center;
-    background-color: white;
   }
   
   .blog-post-img {
